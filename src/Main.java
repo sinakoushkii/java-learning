@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 //        Game.FillBlanks();
-        operators();
+//        operators();
+        shoppingCart();
     }
 
     public static void learning() {
@@ -63,4 +64,27 @@ public class Main {
         System.out.println(x);
     }
 
+    public static void shoppingCart() {
+        Scanner scanner = new Scanner(System.in);
+        String item;
+        double price;
+        double total = 0;
+        int quantity;
+        char currency = '$';
+
+        System.out.println("Welcome to the shopping cart!");
+        System.out.print("Enter items to add to your cart: ");
+        item = scanner.nextLine();
+
+        System.out.print("Enter the price of " + item + ": ");
+        price = scanner.nextDouble();
+
+        System.out.print("Enter the quantity of " + item + ": ");
+        quantity = scanner.nextInt();
+        total = price * quantity;
+        System.out.println("You have added " + quantity + " " + item + "(s) to your cart.");
+        System.out.println("Total cost: " + currency + total);
+
+        scanner.close();
+    }
 }

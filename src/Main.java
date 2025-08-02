@@ -1,11 +1,13 @@
 import java.util.Scanner;
-
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 //        Game.FillBlanks();
 //        operators();
-        shoppingCart();
+//        shoppingCart();
+//        statement();
+        generateRandomNumber();
     }
 
     public static void learning() {
@@ -87,4 +89,39 @@ public class Main {
 
         scanner.close();
     }
+
+    public static void statement() {
+        String name;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        name = scanner.nextLine();
+
+        if (name.isEmpty()) {
+            System.out.println("You did not enter your name!");
+        } else {
+            System.out.println("Hello " + name + "!");
+        }
+        scanner.close();
+    }
+
+    public static void generateRandomNumber() {
+        int number1;
+        double number2;
+        boolean isHeads;
+
+        Random random = new Random();
+        number1 = random.nextInt(1,7);
+
+        // Generate a random double number between 0 and 1
+        number2 = random.nextDouble(1,3);
+
+        // Round the double number to 2 decimal places
+        number2=Math.round(number2*100.0 )/ 100.0;
+        isHeads=random.nextBoolean();
+
+        System.out.println(number1);
+        System.out.println(number2);
+        System.out.println(isHeads ? "Heads" : "Tails");
+    }
+
 }

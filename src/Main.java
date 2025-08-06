@@ -11,8 +11,25 @@ public class Main {
 //        formatOutput();
 //        InterestCalculator.calculateInterest();
 //        stringConfig();
-        convertWeight();
+//        convertWeight();
+        ternaryOperator();
+    }
 
+    public static void ternaryOperator() {
+        int hour = 13;
+        int number = 3;
+        int score = 75;
+        String oddOrEven;
+        String passOrFail;
+        String timeOfDay;
+
+        timeOfDay = (hour <= 12) ? "A.M" : "P.M";
+        passOrFail = (score >= 60) ? "Pass" : "Fail";
+        oddOrEven = (number % 2 == 0) ? "Even" : "Odd";
+
+        System.out.println("Time of day: " + timeOfDay);
+        System.out.println("Your score is: " + passOrFail);
+        System.out.println("The number is: " + oddOrEven);
     }
 
     public static void convertWeight() {

@@ -29,7 +29,7 @@ public class Game {
         System.out.println(noun1 + " was " + adjective2 + " and " + verb1 + " !");
         System.out.println("I was " + adjective3 + " !");
 
+        System.out.println("Thank you for playing the game!");
         scanner.close();
-
     }
 }

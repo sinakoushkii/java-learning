@@ -8,7 +8,77 @@ public class Main {
 //        shoppingCart();
 //        statement();
 //        generateRandomNumber();
-        formatOutput();
+//        formatOutput();
+//        InterestCalculator.calculateInterest();
+//        stringConfig();
+        convertWeight();
+
+    }
+
+    public static void convertWeight() {
+        int choise;
+        double weight;
+        System.out.println("Welcome to the Weight conversion app...");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1: convert LB to KG ");
+        System.out.println("2: convert KG to LB ");
+        System.out.print("choose an option: ");
+        choise = scanner.nextInt();
+
+        if (choise == 1) {
+            System.out.print("Enter your weight (LB): ");
+            weight = scanner.nextDouble();
+            weight = weight * 0.453592;
+            System.out.printf("Your weight is %.2f kg", weight);
+        } else if (choise == 2) {
+            System.out.print("Enter your weight (KG): ");
+            weight = scanner.nextDouble();
+            weight = weight * 2.20462;
+            System.out.printf("Your weight is %.2f lb", weight);
+        } else {
+            System.out.println("Selected option doesnt exist !");
+        }
+        scanner.close();
+    }
+
+    public static void stringConfig() {
+        String name = "   sina koushki    ";
+        String email = "sinakoushki@gmail.com";
+
+
+        int length = name.length();
+        int index = name.indexOf('k');
+        int lastIndex = name.lastIndexOf('i');
+        char letter = name.charAt(2);
+
+        name = name.toUpperCase();
+        name = name.toLowerCase();
+        name = name.trim();
+        name = name.replace('k', 'g');
+
+//        boolean isEqual=name.equals("password");
+        boolean isEqual = name.equalsIgnoreCase("password");
+
+        Scanner scanner = new Scanner(System.in);
+        String domain = email.substring(5, 15);
+
+        System.out.print("Enter your email: ");
+        email = scanner.nextLine();
+
+        if (email.contains("@")) {
+            String username = email.substring(0, email.indexOf("@"));
+            String domain2 = email.substring(email.indexOf("@") + 1);
+            System.out.println(username);
+            System.out.println(domain2);
+
+        } else {
+            System.out.println("Email is not valid !");
+        }
+
+//        System.out.println(isEqual);
+        scanner.close();
+
     }
 
     public static void learning() {
@@ -126,16 +196,17 @@ public class Main {
     }
 
     public static void formatOutput() {
+        // printf is used to format output in Java
 
         int id1 = 7;
         int id2 = 64;
         int id3 = 603;
         int id4 = 7096;
 
-        System.out.printf("%d\n",id1);
-        System.out.printf("%d\n",id2);
-        System.out.printf("%d\n",id3);
-        System.out.printf("%d\n",id4);
+        System.out.printf("%d\n", id1);
+        System.out.printf("%d\n", id2);
+        System.out.printf("%d\n", id3);
+        System.out.printf("%d\n", id4);
 
 
         double price1 = 1900000.99;

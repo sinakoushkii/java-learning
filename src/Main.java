@@ -12,7 +12,27 @@ public class Main {
 //        InterestCalculator.calculateInterest();
 //        stringConfig();
 //        convertWeight();
-        ternaryOperator();
+//        ternaryOperator();
+        temperatureConvertor();
+    }
+
+    public static void temperatureConvertor() {
+        String unit;
+        double temp;
+        double convertedTemp;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the Temperature: ");
+        temp = scanner.nextDouble();
+        System.out.print("convert to Celsius or Fahrenheit (C / F): ");
+        unit = scanner.next().toUpperCase();
+
+        convertedTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp * 5 / 9) + 32;
+        scanner.close();
+
+        System.out.printf("\n Converted Temperature: %.2f %s " , convertedTemp , unit.toUpperCase());
+
     }
 
     public static void ternaryOperator() {

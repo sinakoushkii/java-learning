@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-//        Game.FillBlanks();
+        //Game.FillBlanks();
 //        operators();
 //        shoppingCart();
 //        statement();
@@ -13,7 +13,40 @@ public class Main {
 //        stringConfig();
 //        convertWeight();
 //        ternaryOperator();
-        temperatureConvertor();
+//        temperatureConvertor();
+        calculator();
+    }
+
+    public static void calculator() {
+        double numebrA;
+        double numberB;
+        double result = 0;
+        String operator;
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Number 1: ");
+        numebrA = scanner.nextDouble();
+        System.out.print("Enter Number 2: ");
+        numberB = scanner.nextDouble();
+
+        System.out.print("Choose the operation (* / + - ^) : ");
+        scanner.nextLine();
+        operator = scanner.nextLine();
+        scanner.close();
+
+
+        switch (operator) {
+            case "+" -> result = numebrA + numberB;
+            case "-" -> result = (numebrA > numberB) ? numebrA - numberB : numberB - numebrA;
+            case "*" -> result = numebrA * numberB;
+            case "/"-> result = (numebrA > numberB) ? numebrA / numberB : numberB / numebrA;
+            case "^"-> result = Math.pow(numebrA, numberB);
+            default -> System.out.println("Entered operator is not accepted !");
+        }
+
+        System.out.printf("The result is : %.1f ", result);
+
     }
 
     public static void temperatureConvertor() {

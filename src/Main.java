@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         //Game.FillBlanks();
 //        operators();
@@ -14,40 +15,184 @@ public class Main {
 //        convertWeight();
 //        ternaryOperator();
 //        temperatureConvertor();
-        calculator();
+//        calculator();
+//        bankSystem();
+        diceRoller();
     }
 
-    public static void calculator() {
-        double numebrA;
-        double numberB;
-        double result = 0;
-        String operator;
+    static void diceRoller() {
+        int numberOfDice;
+        int total = 0;
 
+        Random randomNumber = new Random();
+        System.out.print("Enter The number of dice :");
+        numberOfDice = scanner.nextInt();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter Number 1: ");
-        numebrA = scanner.nextDouble();
-        System.out.print("Enter Number 2: ");
-        numberB = scanner.nextDouble();
-
-        System.out.print("Choose the operation (* / + - ^) : ");
-        scanner.nextLine();
-        operator = scanner.nextLine();
-        scanner.close();
-
-
-        switch (operator) {
-            case "+" -> result = numebrA + numberB;
-            case "-" -> result = (numebrA > numberB) ? numebrA - numberB : numberB - numebrA;
-            case "*" -> result = numebrA * numberB;
-            case "/"-> result = (numebrA > numberB) ? numebrA / numberB : numberB / numebrA;
-            case "^"-> result = Math.pow(numebrA, numberB);
-            default -> System.out.println("Entered operator is not accepted !");
+        for (int i = 1; i <= numberOfDice; i++) {
+            int generatedRandomNumber = 0;
+            generatedRandomNumber = randomNumber.nextInt(1, 7);
+            printDice(generatedRandomNumber);
+            total += generatedRandomNumber;
         }
 
-        System.out.printf("The result is : %.1f ", result);
+    }
+
+    static void printDice(int roll) {
+        String dice1 = """
+                 -------
+                |       |
+                |   ●   |
+                |       |
+                 -------
+                """;
+        String dice2 = """
+                 -------
+                |●      |
+                |       |
+                |      ●|
+                 -------
+                """;
+        String dice3 = """
+                 -------
+                |●      |
+                |   ●   |
+                |      ●|
+                 -------
+                """;
+        String dice4 = """
+                 -------
+                |●     ●|
+                |       |
+                |●     ●|
+                 -------
+                """;
+        String dice5 = """
+                 -------
+                |●     ●|
+                |   ●   |
+                |●     ●|
+                 -------
+                """;
+        String dice6 = """
+                 -------
+                |●  ●  ●|
+                |       |
+                |●  ●  ●|
+                 -------
+                """;
+
+        switch (roll) {
+            case 1 -> System.out.println(dice1);
+            case 2 -> System.out.println(dice2);
+            case 3 -> System.out.println(dice3);
+            case 4 -> System.out.println(dice4);
+            case 5 -> System.out.println(dice5);
+            case 6 -> System.out.println(dice6);
+        }
+    }
+
+    public static void bankSystem() {
+
+        double balance = 0;
+        boolean isRunning = true;
+        int choice;
+
+        while (isRunning) {
+            System.out.println("********************");
+            System.out.println("Banking System");
+            System.out.println("********************");
+            System.out.println("1. Show balance");
+            System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Exit");
+            System.out.print("Enter a number (1-4): ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1 -> showBalance(balance);
+                case 2 -> balance += deposit();
+                case 3 -> balance -= withdraw(balance);
+                case 4 -> isRunning = false;
+                default -> System.out.println("Invalid item was selected !");
+            }
+        }
+
+        System.out.println("==============================");
+        System.out.println("Thank you ! have a nice day .");
+        System.out.println("==============================");
+        scanner.close();
 
     }
+
+    static void showBalance(double balance) {
+        System.out.printf("Your account balance is: $%.2f\n", balance);
+    }
+
+    static double deposit() {
+        double amount;
+
+        System.out.print("Enter The amount: ");
+        amount = scanner.nextDouble();
+
+        if (amount < 0) {
+            System.out.println("You are not allowed to enter negative numbers !!!");
+            return 0;
+        } else {
+            System.out.println("Successful Deposit...");
+            return amount;
+        }
+
+    }
+
+    static double withdraw(double balance) {
+        double amount;
+
+        System.out.print("Enter The amount to withdraw: ");
+        amount = scanner.nextDouble();
+        if (amount > balance) {
+            System.out.println("Insufficient funds !");
+            return 0;
+        } else if (amount < 0) {
+            System.out.println("You are not allowed to enter negative numbers !!!");
+            return 0;
+        } else {
+            System.out.println("Successful Withdraw...");
+            return amount;
+        }
+
+    }
+
+//    public static void calculator() {
+//        double numebrA;
+//        double numberB;
+//        double result = 0;
+//        String operator;
+//
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter Number 1: ");
+//        numebrA = scanner.nextDouble();
+//        System.out.print("Enter Number 2: ");
+//        numberB = scanner.nextDouble();
+//
+//        System.out.print("Choose the operation (* / + - ^) : ");
+//        scanner.nextLine();
+//        operator = scanner.nextLine();
+//        scanner.close();
+//
+//
+//        switch (operator) {
+//            case "+" -> result = numebrA + numberB;
+//            case "-" -> result = (numebrA > numberB) ? numebrA - numberB : numberB - numebrA;
+//            case "*" -> result = numebrA * numberB;
+//            case "/"-> result = (numebrA > numberB) ? numebrA / numberB : numberB / numebrA;
+//            case "^"-> result = Math.pow(numebrA, numberB);
+//            default -> System.out.println("Entered operator is not accepted !");
+//        }
+//
+//        System.out.printf("The result is : %.1f ", result);
+//
+//    }
 
     public static void temperatureConvertor() {
         String unit;

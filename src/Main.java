@@ -26,11 +26,16 @@ public class Main {
 //        printSumOfVarargs(2,5,7,3);
 //        quizGame();
 //        print2dArray();
-        Employee irisaEmployee=new Employee("sina","koshki",2000);
+
+        Car car1 = new Car("mustung", "ford", "red", 2024);
+        System.out.println(car1);
+        System.out.println(car1.toString());
+
+        Employee irisaEmployee = new Employee("sina", "koshki", 2000);
         irisaEmployee.showName();
         irisaEmployee.showSalary();
 
-        Dog dog =new Dog();
+        Dog dog = new Dog();
         Fish fish = new Fish();
         dog.move();
         fish.move();

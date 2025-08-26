@@ -1,10 +1,12 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        //Game.FillBlanks();
+//        Game.FillBlanks();
 //        operators();
 //        shoppingCart();
 //        statement();
@@ -17,7 +19,180 @@ public class Main {
 //        temperatureConvertor();
 //        calculator();
 //        bankSystem();
-        diceRoller();
+//        diceRoller();
+//foodOrder();
+//        sampleArray();
+//        searchInArray();
+//        printSumOfVarargs(2,5,7,3);
+//        quizGame();
+//        print2dArray();
+    }
+
+    static void rockPaperScissors() {
+        String userMove;
+        String[] Options = {"rock", "paper", "scissors"};
+        Random randomNumber = new Random();
+
+        System.out.print("Enter your move: ");
+        userMove = scanner.nextLine();
+
+
+        //declare variables
+        //get the choise from user
+        //get random choise from the computer
+        //check win condition
+        //ask to play again
+    }
+
+    static void quizGame() {
+        char userAnswers[] = new char[4];
+        char keys[] = {'A', 'B', 'C', 'D'};
+
+
+        String[] questions = {
+                "1-Which country has the largest population in the world (as of 2025)?",
+                "2-What is the chemical symbol for gold?",
+                "3-Who was the first President of the United States?",
+                "4-How many players are there on a standard soccer team (on the field)?",
+        };
+        String[][] options = {
+                {"A)India", "B)China", "C)United States", "D)Indonesia"},
+                {"A)Ag", "B)Au", "C)Gd", "D)Go"},
+                {"A)Thomas Jefferson", "B)Abraham Lincoln", "C)George Washington", "D)John Adams"},
+                {"A)9", "B)10", "C)11", "D)12"},
+        };
+
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            for (String option : options[i]) {
+                System.out.println(option);
+            }
+            System.out.println("=========================================");
+            System.out.print("Enter the charachter: ");
+            char userInput = scanner.nextLine().toUpperCase().charAt(0);
+            if (userInput != 'A' && userInput != 'B' && userInput != 'C' && userInput != 'D') {
+                System.out.println("The option is not valid");
+                break;
+            } else {
+                userAnswers[i] = userInput;
+            }
+//            userAnswers[i]=
+        }
+
+        System.out.println("*******************************************");
+
+        for (int i = 0; i < keys.length; i++) {
+            if (userAnswers[i] == keys[i]) {
+                System.out.printf("The answer {%c} Is Correct for the question {%d}", userAnswers[i], i + 1);
+                System.out.println();
+            } else {
+                System.out.printf("The answer {%c} IS Wrong for the question {%d} -> ", userAnswers[i], i + 1);
+                System.out.printf("The correct answer Is: {%c} \n", keys[i]);
+            }
+        }
+    }
+
+    static void print2dArray() {
+
+        String[][] groceries = {
+                {"chicken", "meat", "fish"},
+                {"orange", "apple", "watermelon"},
+                {"potato", "onion", "carrot"}
+        };
+
+//        first index is for the row and the second index is for the column
+        groceries[1][0] = "banana";
+        for (String[] foods : groceries) {
+            for (String food : foods) {
+                System.out.print(food + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void printSumOfVarargs(int... numbers) {
+//        varargs= allow a method to accept varying number of arguments,
+//        there is no need to use overloaded methods, java will pack the arguments in an array
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        System.out.println("Sum of Entered numbers is: " + sum);
+    }
+
+    static void searchInArray() {
+        String[] fruits = {"banana", "apple", "watermelon"};
+        int[] numbers = {2, 9, 3, 7, 1, 10, 6, 4, 8};
+        String searchedFruit;
+        int searchedNumber;
+        boolean isFoundFruit = false;
+        boolean isFoundNumber = false;
+
+        System.out.print("Enter the name of a fruits: ");
+        searchedFruit = scanner.nextLine();
+
+        System.out.print("Enter a number: ");
+        searchedNumber = scanner.nextInt();
+
+        for (int i = 0; i < fruits.length; i++) {
+            if (fruits[i].equals(searchedFruit)) {
+                System.out.println("Element found at the index of " + i);
+                isFoundFruit = true;
+                break;
+            }
+        }
+        if (!isFoundFruit) {
+            System.out.println("There is no such fruits !");
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == searchedNumber) {
+                System.out.println("Number found at the index of " + i);
+                isFoundNumber = true;
+                break;
+            }
+        }
+        if (!isFoundNumber) {
+            System.out.println("There is no such number !");
+        }
+    }
+
+    static void foodOrder() {
+        String[] foods;
+        int size;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What number of food do you want: ");
+        size = scanner.nextInt();
+        foods = new String[size];
+
+        scanner.nextLine();
+
+        for (int i = 0; i < foods.length; i++) {
+            System.out.print("Enter the food name: ");
+            foods[i] = scanner.nextLine();
+        }
+
+        for (String food : foods) {
+            System.out.print(food + " ");
+        }
+
+        scanner.close();
+    }
+
+    static void sampleArray() {
+        String names[] = {"sina", "omid", "reza", "amir", "soheil"};
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].contains("r")) {
+                System.out.print(names[i] + " ");
+            }
+
+        }
+        System.out.println("");
+        Arrays.sort(names);
+        for (String name : names) {
+            System.out.print(name + " ");
+        }
     }
 
     static void diceRoller() {
@@ -162,37 +337,37 @@ public class Main {
 
     }
 
-//    public static void calculator() {
-//        double numebrA;
-//        double numberB;
-//        double result = 0;
-//        String operator;
-//
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Enter Number 1: ");
-//        numebrA = scanner.nextDouble();
-//        System.out.print("Enter Number 2: ");
-//        numberB = scanner.nextDouble();
-//
-//        System.out.print("Choose the operation (* / + - ^) : ");
-//        scanner.nextLine();
-//        operator = scanner.nextLine();
-//        scanner.close();
-//
-//
-//        switch (operator) {
-//            case "+" -> result = numebrA + numberB;
-//            case "-" -> result = (numebrA > numberB) ? numebrA - numberB : numberB - numebrA;
-//            case "*" -> result = numebrA * numberB;
-//            case "/"-> result = (numebrA > numberB) ? numebrA / numberB : numberB / numebrA;
-//            case "^"-> result = Math.pow(numebrA, numberB);
-//            default -> System.out.println("Entered operator is not accepted !");
-//        }
-//
-//        System.out.printf("The result is : %.1f ", result);
-//
-//    }
+    public static void calculator() {
+        double numebrA;
+        double numberB;
+        double result = 0;
+        String operator;
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Number 1: ");
+        numebrA = scanner.nextDouble();
+        System.out.print("Enter Number 2: ");
+        numberB = scanner.nextDouble();
+
+        System.out.print("Choose the operation (* / + - ^) : ");
+        scanner.nextLine();
+        operator = scanner.nextLine();
+        scanner.close();
+
+
+        switch (operator) {
+            case "+" -> result = numebrA + numberB;
+            case "-" -> result = (numebrA > numberB) ? numebrA - numberB : numberB - numebrA;
+            case "*" -> result = numebrA * numberB;
+            case "/" -> result = (numebrA > numberB) ? numebrA / numberB : numberB / numebrA;
+            case "^" -> result = Math.pow(numebrA, numberB);
+            default -> System.out.println("Entered operator is not accepted !");
+        }
+
+        System.out.printf("The result is : %.1f ", result);
+
+    }
 
     public static void temperatureConvertor() {
         String unit;

@@ -27,18 +27,30 @@ public class Main {
 //        quizGame();
 //        print2dArray();
 
-        Car car1 = new Car("mustung", "ford", "red", 2024);
-        System.out.println(car1);
-        System.out.println(car1.toString());
 
-        Employee irisaEmployee = new Employee("sina", "koshki", 2000);
-        irisaEmployee.showName();
-        irisaEmployee.showSalary();
+        Circle circle=new Circle(5);
+        Triangle triangle=new Triangle(4,6);
+        System.out.println(triangle.area());
+        System.out.println(circle.area());
+        triangle.display();
+        circle.display();
 
-        Dog dog = new Dog();
-        Fish fish = new Fish();
-        dog.move();
-        fish.move();
+        Car car1 = new Car("405", "ford", "red", 2024);
+//        Car car2 = car1;
+        Car car2 = new Car("405", "ford", "red", 2024);
+//        System.out.println(car1.equals(car2));
+//        System.out.println(car1.hashCode());
+//        System.out.println(car2.hashCode());
+//        System.out.println(car1.toString());
+
+//        Employee irisaEmployee = new Employee("sina", "koshki", 2000);
+//        irisaEmployee.showName();
+//        irisaEmployee.showSalary();
+//
+//        Dog dog = new Dog();
+//        Fish fish = new Fish();
+//        dog.move();
+//        fish.move();
     }
 
 //    test

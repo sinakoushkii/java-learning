@@ -1,4 +1,4 @@
-public class Car {
+public class Car extends Vehicle {
     String name;
     String company;
     String color;
@@ -15,6 +15,11 @@ public class Car {
     public String toString(){
         return name+" "+company+" "+color+" "+model;
     }
+    @Override
+    void go() {
+        System.out.println("Car is driving");
+    }
+
 
 //    @Override
 //    public boolean equals(Object obj) {

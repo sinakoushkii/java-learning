@@ -6,6 +6,26 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+//        Polymorphism
+//        objects can identify as their own class type or any parent class type
+//        objects can be treated as the object of common superclass
+
+
+        Car car = new Car("405", "ford", "red", 2024);
+        Boat boat = new Boat();
+        Bike bike = new Bike();
+
+//       The array type is car it can hold any object that is a subclass of car
+//        Car[] vehicle = {car, boat, bike};
+        Vehicle[] vehicles = {car, boat, bike};
+        for (Vehicle vehicle : vehicles) {
+            vehicle.go();
+        }
+
+
+
+
 //        Game.FillBlanks();
 //        operators();
 //        shoppingCart();
@@ -28,16 +48,16 @@ public class Main {
 //        print2dArray();
 
 
-        Circle circle=new Circle(5);
-        Triangle triangle=new Triangle(4,6);
-        System.out.println(triangle.area());
-        System.out.println(circle.area());
-        triangle.display();
-        circle.display();
+//        Circle circle=new Circle(5);
+//        Triangle triangle=new Triangle(4,6);
+//        System.out.println(triangle.area());
+//        System.out.println(circle.area());
+//        triangle.display();
+//        circle.display();
 
-        Car car1 = new Car("405", "ford", "red", 2024);
+//        Car car1 = new Car("405", "ford", "red", 2024);
 //        Car car2 = car1;
-        Car car2 = new Car("405", "ford", "red", 2024);
+//        Car car2 = new Car("405", "ford", "red", 2024);
 //        System.out.println(car1.equals(car2));
 //        System.out.println(car1.hashCode());
 //        System.out.println(car2.hashCode());

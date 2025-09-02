@@ -6,51 +6,18 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-//        Game.FillBlanks();
-//        operators();
-//        shoppingCart();
-//        statement();
-//        generateRandomNumber();
-//        formatOutput();
-//        InterestCalculator.calculateInterest();
-//        stringConfig();
-//        convertWeight();
-//        ternaryOperator();
-//        temperatureConvertor();
-//        calculator();
-//        bankSystem();
-//        diceRoller();
-//foodOrder();
-//        sampleArray();
-//        searchInArray();
-//        printSumOfVarargs(2,5,7,3);
-//        quizGame();
-//        print2dArray();
 
+        Animal animal;
+        System.out.print("choose an animal (1-Dog 2-Cat): ");
+        int choice = scanner.nextInt();
 
-        Circle circle=new Circle(5);
-        Triangle triangle=new Triangle(4,6);
-        System.out.println(triangle.area());
-        System.out.println(circle.area());
-        triangle.display();
-        circle.display();
-
-        Car car1 = new Car("405", "ford", "red", 2024);
-//        Car car2 = car1;
-        Car car2 = new Car("405", "ford", "red", 2024);
-//        System.out.println(car1.equals(car2));
-//        System.out.println(car1.hashCode());
-//        System.out.println(car2.hashCode());
-//        System.out.println(car1.toString());
-
-//        Employee irisaEmployee = new Employee("sina", "koshki", 2000);
-//        irisaEmployee.showName();
-//        irisaEmployee.showSalary();
-//
-//        Dog dog = new Dog();
-//        Fish fish = new Fish();
-//        dog.move();
-//        fish.move();
+        if(choice ==1){
+            animal=new Dog();
+            animal.makeSound();
+        } else if (choice==2) {
+            animal=new Cat();
+            animal.makeSound();
+        }
     }
 
 //    test
@@ -507,7 +474,7 @@ public class Main {
         double height = 0;
         double area = 0;
 
-        Information.ShowInfo();
+//        Information.ShowInfo();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the width: ");
         width = scanner.nextDouble();

@@ -7,15 +7,22 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        Animal[] allAnimal ={new Dog(), new Cat()};
+
+        for(Animal animal:allAnimal){
+            animal.makeSound();
+        }
+
         Animal animal;
         System.out.print("choose an animal (1-Dog 2-Cat): ");
         int choice = scanner.nextInt();
 
-        if(choice ==1){
-            animal=new Dog();
+        if (choice == 1) {
+            animal = new Dog();
             animal.makeSound();
-        } else if (choice==2) {
-            animal=new Cat();
+        } else if (choice == 2) {
+            animal = new Cat();
             animal.makeSound();
         }
     }

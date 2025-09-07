@@ -8,9 +8,16 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Animal[] allAnimal ={new Dog(), new Cat()};
+        Car myCar = new Car("BMW", "X5", 60000);
 
-        for(Animal animal:allAnimal){
+        myCar.setName("Mercedes");
+        myCar.setPrice(75000);
+
+        System.out.println(myCar.getName() + " " + myCar.getModel() + " " + myCar.getPrice());
+
+        Animal[] allAnimal = {new Dog(), new Cat()};
+
+        for (Animal animal : allAnimal) {
             animal.makeSound();
         }
 

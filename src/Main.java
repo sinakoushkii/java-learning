@@ -17,9 +17,9 @@ public class Main {
        library.displayLibraryInfo();
        library=null;
 //       although the library object is set to null but the books array still exists in the memory
-       for(Book book:books){
-        book.displayBookInfo();
-       }
+//       for(Book book:books){
+//        book.displayBookInfo();
+//       }
 
 
         System.out.println("================ Vehicle Info ================");

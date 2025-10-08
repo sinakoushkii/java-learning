@@ -6,9 +6,39 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("================ Library Info ================");
+        Book book1=new Book("The Great Gatsby",180);
+        Book book2=new Book("Rich dad poor dad",240);
+        Book book3=new Book("Atomic Habits",170);
 
+        Book[] books={book1,book2,book3};
+        Library library=new Library("City Library",1995,books);
+
+       library.displayLibraryInfo();
+       library=null;
+//       although the library object is set to null but the books array still exists in the memory
+       for(Book book:books){
+        book.displayBookInfo();
+       }
+
+
+        System.out.println("================ Vehicle Info ================");
 
         Car myCar = new Car("BMW", "X5", 60000);
+        Boat boat = new Boat();
+        Bike bike=new Bike();
+
+        boat.go();
+        bike.go();
+        myCar.go();
+
+        System.out.println("================ Polymorphism ================");
+
+        Vehicle[] vehicles = {myCar, boat , bike};
+        for (Vehicle vehicle : vehicles){
+            vehicle.go();
+        }
+
 
         myCar.setName("Mercedes");
         myCar.setPrice(75000);
